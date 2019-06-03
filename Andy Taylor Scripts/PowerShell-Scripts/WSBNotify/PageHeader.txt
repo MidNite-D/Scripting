@@ -1,0 +1,22 @@
+<script type="text/javascript">
+
+(function reload()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+</script>
+<style>
+BODY{background:none transparent;}
+TABLE{margin-left: auto;margin-right: auto;border-width: 1px;border-style: solid;border-color: black;border-collapse: collapse;font-size: 12px}
+TH{border-width: 1px;padding: 0px;border-style: solid;border-color: black;background-color:42779f}
+TD{border-width: 1px;padding: 0px;border-style: solid;border-color: black;background-color:palegoldenrod;width: 400;text-align: center
+</style>
