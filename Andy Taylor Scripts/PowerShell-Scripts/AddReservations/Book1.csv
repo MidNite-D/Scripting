@@ -1,0 +1,36 @@
+MAC,IP,NAME
+001b7870009c,172.16.6.1,Admin Printer Marissa HP3600n
+404a030552c7,172.16.7.10,Wireless AP Primary Master CAB A port 24
+40410321c84e,172.16.7.11,Wireless POE Switch CAB A
+404a0324bd23,172.16.7.12,Wireless POE Switch CAB B
+404a0324bcf8,172.16.7.13,Wireless POE Switch CAB C
+404a03055284,172.16.7.14,NWA-Series.RichmondHouse.local
+404a030589f4,172.16.7.15,NWA-Series.RichmondHouse.local
+404a030589f9,172.16.7.16,NWA-Series.RichmondHouse.local
+404a03055289,172.16.7.17,NWA-Series.RichmondHouse.local
+404a030552c8,172.16.7.18,Wireless AP Repeater
+404a030589fa,172.16.7.19,Wireless AP Secondary Master CAB B port 24
+404a030552cb,172.16.7.20,NWA-Series.RichmondHouse.local
+404a030552cc,172.16.7.21,NWA-Series.RichmondHouse.local
+404a030552cf,172.16.7.22,NWA-Series.RichmondHouse.local
+404a030552ce,172.16.7.23,NWA-Series.RichmondHouse.local
+404a030589f5,172.16.7.24,NWA-Series.RichmondHouse.local
+404a030589f6,172.16.7.25,NWA-Series.RichmondHouse.local
+404a030589fb,172.16.7.26,NWA-Series.RichmondHouse.local
+404a030589f3,172.16.7.27,NWA-Series.RichmondHouse.local
+404a030589f2,172.16.7.28,NWA-Series.RichmondHouse.local
+404a0305528a,172.16.7.29,NWA-Series.RichmondHouse.local
+404a030589f7,172.16.7.30,NWA-Series.RichmondHouse.local
+404a03055285,172.16.7.31,NWA-Series.RichmondHouse.local
+404a030589f8,172.16.7.32,NWA-Series.RichmondHouse.local
+404a030552c9,172.16.7.33,WAP14
+001438e7c13c,172.16.7.34,NPIE7C13C.RichmondHouse.local
+00206bd29165,172.16.7.50,Science DT Konica 4750EN
+00206bd294e1,172.16.7.51,MC4750-D294E1.RichmondHouse.local
+002068d2909c,172.16.7.52,Konica Art Room
+001438e987ea,172.16.7.53,NP1E987EA
+00c0eeac02c5,172.16.7.54,KMAC02C5.RichmondHouse.local
+00206b66e4d7,172.16.7.55,KONICA C360 Series Printer
+00206b6370e5,172.16.7.56,Konica C452 Series Printer
+60128b5e6d83,172.16.7.58,Butterfly Printer
+ecb1d7f8e4d5,172.16.7.59,HPF8E4D5.RichmondHouse.local

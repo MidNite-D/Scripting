@@ -1,0 +1,37 @@
+cisco
+Cisco
+
+enable
+Rhino2006
+
+conf t
+
+interface BVI1
+
+no ip route-cache
+
+
+interface GigabitEthernet0
+ no ip address
+ no ip route-cache
+ duplex auto
+ speed auto
+ bridge-group 1
+ no bridge-group 1 source-learning
+ bridge-group 1 spanning-disabled
+
+
+
+bridge 1 route ip
+
+ip http authentication local
+
+
+
+line con 0
+logg syn
+line vty 0 4
+ login local
+
+end
+wr

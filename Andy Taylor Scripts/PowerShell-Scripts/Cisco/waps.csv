@@ -1,0 +1,5 @@
+ip,hostname,domainname,ssid,channel,key
+10.0.0.102,C2702-AP1,whingatecurr.local,WhingatePS,11,1132638910
+10.0.0.105,C2702-AP2,whingatecurr.local,WhingatePS,11,1132638910
+10.0.0.108,C2702-AP3,whingatecurr.local,WhingatePS,1,1132638910
+

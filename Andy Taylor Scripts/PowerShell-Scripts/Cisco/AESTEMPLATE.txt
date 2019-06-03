@@ -1,0 +1,122 @@
+cisco
+Cisco
+enable
+cisco
+Cisco
+
+conf t
+
+username connect priv 15 secret rhino
+
+hostname _HOSTNAME
+
+ip domain-name _DOMAINNAME
+
+line con 0
+logg syn
+
+
+line vty 0 4
+login local
+logging syn
+exit
+
+
+
+
+enable secret Rhino2006
+
+
+service password-encryption
+
+enable secret Rhino2006
+
+no aaa new-model
+
+
+ip domain-name _DOMAINNAME
+
+crypto key gen rsa
+yes
+1024
+
+
+no aaa new-model
+
+
+
+dot11 ssid _SSID
+   vlan 768
+   authentication open
+   authentication key-management wpa version 2
+   mbssid guest-mode
+   wpa-psk ascii _KEY
+
+power inline negotiation prestandard source
+
+interface Dot11Radio0
+ no ip address
+ no ip route-cache
+ 
+ dot11 qos mode wmm
+ encryption mode ciphers aes-ccm
+ 
+ encryption vlan 768 mode ciphers aes-ccm
+ 
+ ssid _SSID
+
+ 
+
+ mbssid
+ channel _CHANNEL
+ station-role root
+ no dot11 extension aironet
+ no cdp enable
+ no shut
+
+ 
+interface Dot11Radio0.768
+ encapsulation dot1Q 768 native
+ no ip route-cache
+ bridge-group 1
+ bridge-group 1 subscriber-loop-control
+ bridge-group 1 block-unknown-source
+ no bridge-group 1 source-learning
+ no bridge-group 1 unicast-flooding
+ bridge-group 1 spanning-disabled
+
+
+
+interface Dot11Radio1
+ no ip address
+ no ip route-cache
+ 
+ dot11 qos mode wmm
+ encryption mode ciphers aes-ccm
+ 
+ encryption vlan 768 mode ciphers aes-ccm
+ 
+ ssid _SSID
+
+ 
+ no dfs band block
+ mbssid
+ channel dfs
+ station-role root
+ no dot11 extension aironet
+ no cdp enable
+ no shut
+
+
+interface Dot11Radio1.768
+ encapsulation dot1Q 768 native
+ no ip route-cache
+ bridge-group 1
+ bridge-group 1 subscriber-loop-control
+ bridge-group 1 block-unknown-source
+ no bridge-group 1 source-learning
+ no bridge-group 1 unicast-flooding
+ bridge-group 1 spanning-disabled
+
+interface BVI1
+ ip address dhcp client-id GigabitEthernet0
