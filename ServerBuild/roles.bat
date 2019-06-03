@@ -1,0 +1,2 @@
+ntdsutil.exe "roles" "connections" "connect to server %1" "q" "transfer naming master" "transfer infrastructure master" "transfer PDC" "transfer RID master" "transfer schema master" "q" "q"
+netdom query fsmo

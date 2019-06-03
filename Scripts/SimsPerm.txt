@@ -1,0 +1,51 @@
+@echo off
+ 
+if "%1" == "" goto :usage
+ 
+SubInAcl /FILE "%WINDIR%\SIMS.INI" /GRANT=%1=F
+ 
+SubInAcl /KEYREG HKEY_LOCAL_MACHINE\SOFTWARE\Classes /GRANT=%1
+SubInAcl /KEYREG HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID /GRANT=%1
+SubInAcl /KEYREG HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Interface /GRANT=%1
+SubInAcl /KEYREG HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TypeLib /GRANT=%1
+ 
+if "%ALLUSERSPROFILE%" == "" goto :skip_simsapps
+SubInAcl /FILE "%ALLUSERSPROFILE%\Start Menu\Programs\SIMS Applications\*.*" /GRANT=%1=F
+SubInAcl /FILE "%ALLUSERSPROFILE%\Start Menu\Programs\SIMS Applications" /GRANT=%1=F
+SubInAcl /SUBDIRECTORIES "%ALLUSERSPROFILE%\Start Menu\Programs\SIMS Applications\*.*" /GRANT=%1=F
+SubInAcl /SUBDIRECTORIES "%ALLUSERSPROFILE%\Start Menu\Programs\SIMS Applications" /GRANT=%1=F
+goto :after_profile_warning
+ 
+:skip_simsapps
+echo.
+echo ** WARNING: The Environment Variable for All Users Profiles is not set on this pc,
+echo **  cannot grant permissions for the SIMS Applications Program Folder.
+echo.
+ 
+ 
+:after_profile_warning
+ 
+ 
+if "%ProgramFiles%" == "" goto :skip_simsdir
+SubInAcl /FILE "%ProgramFiles%\SIMS\*.*" /GRANT=%1=F
+SubInAcl /FILE "%ProgramFiles%\SIMS" /GRANT=%1=F
+SubInAcl /SUBDIRECTORIES "%ProgramFiles%\SIMS\*.*" /GRANT=%1=F
+SubInAcl /SUBDIRECTORIES "%ProgramFiles%\SIMS" /GRANT=%1=F
+goto :after_simsdir_warning
+ 
+:skip_simsdir
+echo.
+echo ** WARNING: The Environment Variable for the Program Files Folder is not set on this pc,
+echo **  cannot grant permissions to the SIMS Application Folder.
+echo.
+ 
+ 
+:after_simsdir_warning
+goto :end
+ 
+:usage
+echo.
+echo "Usage simsperm [domain]\<username>  or   simsperm [domain]\<user group>"
+echo.
+:end
+ 
